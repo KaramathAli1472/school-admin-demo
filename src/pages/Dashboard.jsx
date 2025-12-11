@@ -32,7 +32,7 @@ const Dashboard = () => {
     backgroundColor: bg,
     color: "#fff",
     textAlign: "center",
-    flex: "1 1 150px",
+    flex: "1 1 200px", // responsive width
     margin: "10px",
     minWidth: "150px",
     cursor: "pointer",
@@ -61,7 +61,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div style={{ padding: "40px", fontFamily: "Arial, sans-serif" }}>
+    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
       <h1>Admin Dashboard</h1>
       <p>Welcome to School Management Panel</p>
 
@@ -70,7 +70,6 @@ const Dashboard = () => {
         style={{
           display: "flex",
           flexWrap: "wrap",
-          marginTop: "30px",
           gap: "10px",
           justifyContent: "center",
         }}
@@ -83,16 +82,16 @@ const Dashboard = () => {
             onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
             onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
           >
-            <h2 style={{ margin: "0", fontSize: "24px" }}>{c.value}</h2>
-            <p>{c.title}</p>
+            <h2 style={{ margin: "0", fontSize: "20px" }}>{c.value}</h2>
+            <p style={{ margin: "5px 0", fontSize: "14px" }}>{c.title}</p>
           </div>
         ))}
       </div>
 
       {/* Attendance Chart */}
-      <div style={{ marginTop: "50px" }}>
+      <div style={{ marginTop: "40px" }}>
         <h2>Attendance Trend</h2>
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={250}>
           <LineChart data={attendanceData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
@@ -106,9 +105,9 @@ const Dashboard = () => {
       </div>
 
       {/* Fees Chart */}
-      <div style={{ marginTop: "50px" }}>
+      <div style={{ marginTop: "40px" }}>
         <h2>Fees Collection</h2>
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={250}>
           <LineChart data={feesData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" />
@@ -122,9 +121,9 @@ const Dashboard = () => {
       </div>
 
       {/* Homework Chart */}
-      <div style={{ marginTop: "50px" }}>
+      <div style={{ marginTop: "40px", marginBottom: "40px" }}>
         <h2>Homework Status</h2>
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={250}>
           <LineChart data={homeworkData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="subject" />
